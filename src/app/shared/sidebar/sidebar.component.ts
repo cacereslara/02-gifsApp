@@ -3,7 +3,8 @@ import { GifsService } from '../../gifs/services/gifs.service';
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html'
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
 
@@ -16,4 +17,11 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buscar(query: string) {
+    this.gifsService.buscarGifs(query);
+  }
+
+  borrarHistorial() {
+    this.gifsService.borrarHistorial();
+  }
 }
